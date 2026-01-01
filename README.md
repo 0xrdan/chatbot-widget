@@ -294,11 +294,24 @@ chatbot-widget/
 
 ---
 
-## Related Projects
+## Part of the Context Continuity Stack
 
-- [rag-pipeline](https://github.com/0xrdan/rag-pipeline) - The RAG backend this widget connects to
-- [mcp-rag-server](https://github.com/0xrdan/mcp-rag-server) - MCP server for RAG capabilities
-- [ai-orchestrator](https://github.com/0xrdan/ai-orchestrator) - Multi-model routing for responses
+This repo is the **user-facing layer** in a broader approach to **context continuity** — giving AI systems the right context at the right time.
+
+| Layer | Role | This Repo |
+|-------|------|-----------|
+| **Intra-session** | **Short-term memory (4-hr cache)** | **chatbot-widget** |
+| **Document-scoped** | **Injected article context** | **chatbot-widget** |
+| **Progressive** | **Go Deeper staged responses** | **chatbot-widget** |
+| **Exportable** | **Conversation download** | **chatbot-widget** |
+| Retrieved | Long-term semantic memory | — |
+
+The widget handles **ephemeral memory** (session cache), **scoped context** (Research Mode), **progressive disclosure** (Go Deeper), and **user-controlled persistence** (download). Combined with RAG for long-term retrieval, it creates seamless context continuity.
+
+**Related repos:**
+- [rag-pipeline](https://github.com/0xrdan/rag-pipeline) — The RAG backend for semantic retrieval
+- [mcp-rag-server](https://github.com/0xrdan/mcp-rag-server) — RAG as MCP tools
+- [ai-orchestrator](https://github.com/0xrdan/ai-orchestrator) — Complexity-based model routing
 
 ---
 
